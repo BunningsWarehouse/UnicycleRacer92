@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm4ia52brnfqd"]
+
+[ext_resource type="ArrayMesh" uid="uid://br1a2i0wad7sb" path="res://assets/unicycle.obj" id="1_u2xit"]
+[ext_resource type="Script" path="res://scenes/unicycle.gd" id="1_xwuk5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lxytw"]
+
+[node name="Unicycle" type="VehicleBody3D"]
+script = ExtResource("1_xwuk5")
+
+[node name="Body Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.124832, 0, 0, 0, -5.45656e-09, 0.124832, 0, -0.124832, -5.45656e-09, 0, 0, 0)
+mesh = ExtResource("1_u2xit")
+
+[node name="CameraOrigin" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraOrigin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98863, 0.0367899, -0.0219307)
+spring_length = 2.0
+margin = 0.5
+metadata/_edit_group_ = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraOrigin/SpringArm3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.1986, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(6.903, 0, 0, 0, 6.903, 0, 0, 0, 6.903, -1.00793, 6, 0)
+shape = SubResource("CapsuleShape3D_lxytw")
