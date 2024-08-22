@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx16578vw56xp"]
+[gd_scene load_steps=7 format=3 uid="uid://bx16578vw56xp"]
+
+[ext_resource type="PackedScene" uid="uid://bo281n700jdc8" path="res://scenes/unicycle.tscn" id="1_uxhwy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gn42d"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -20,6 +22,9 @@ data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0,
 
 [node name="Node3D" type="Node3D"]
 
+[node name="Unicycle" parent="." instance=ExtResource("1_uxhwy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72711, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_b2ks7")
 
@@ -28,7 +33,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, 0)
+transform = Transform3D(4.66899, 0, 0, 0, 1, 0, 0, 0, 5.94588, 0, 2.38419e-07, 0)
 mesh = SubResource("PlaneMesh_o7qma")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
