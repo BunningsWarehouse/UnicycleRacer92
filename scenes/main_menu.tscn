@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://covou16n5u64m"]
+[gd_scene load_steps=4 format=3 uid="uid://covou16n5u64m"]
 
 [ext_resource type="Script" path="res://scripts/Main Menu.gd" id="1_ujbmi"]
+[ext_resource type="Texture2D" uid="uid://b4gt35uftra34" path="res://assets/logo.png" id="2_7i1va"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrnyf"]
+texture = ExtResource("2_7i1va")
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -12,15 +16,26 @@ grow_vertical = 2
 script = ExtResource("1_ujbmi")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = -50.5
+offset_right = -21.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.98, 2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 text = "Play"
 
 [node name="Settings" type="Button" parent="MarginContainer/VBoxContainer"]
@@ -30,6 +45,19 @@ text = "Settings"
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit Game"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.0
+offset_top = 11.0
+offset_right = -177.0
+offset_bottom = 51.0
+grow_horizontal = 2
+scale = Vector2(9.86707, 6.33816)
+theme_override_styles/panel = SubResource("StyleBoxTexture_yrnyf")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
