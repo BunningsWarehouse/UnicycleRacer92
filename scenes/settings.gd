@@ -7,7 +7,7 @@ func _on_volume_value_changed(value):
 
 
 func _on_mute_toggled(toggled_on):
-	pass # Replace with function body.
+	AudioServer.set_bus_mute(0,toggled_on)
 
 
 func _on_resolutions_item_selected(index):
