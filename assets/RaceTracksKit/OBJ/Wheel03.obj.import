@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ba3kubyo232xy"
+path="res://.godot/imported/Wheel03.obj-dc74a7cc99559e04038410eb82e8ebbe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wheel03.obj-dc74a7cc99559e04038410eb82e8ebbe.mesh"]
+
+source_file="res://assets/RaceTracksKit/OBJ/Wheel03.obj"
+dest_files=["res://.godot/imported/Wheel03.obj-dc74a7cc99559e04038410eb82e8ebbe.mesh", "res://.godot/imported/Wheel03.obj-dc74a7cc99559e04038410eb82e8ebbe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

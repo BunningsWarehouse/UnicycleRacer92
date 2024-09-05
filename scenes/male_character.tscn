@@ -382,6 +382,7 @@ bones/32/rotation = Quaternion(-2.77556e-17, -1.0842e-19, -3.00927e-36, 1)
 bones/32/scale = Vector3(1, 1, 1)
 
 [node name="Object_7" type="MeshInstance3D" parent="Sketchfab_model/hero_fbx/RootNode/rig/Object_4/Skeleton3D"]
+transform = Transform3D(1, 0, -2.70128e-25, 0, 1, 0, -2.70128e-25, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_rs3rn")
 skin = SubResource("Skin_lill2")
 

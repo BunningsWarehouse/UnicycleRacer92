@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dsdwxtgdyufrc"
+path="res://.godot/imported/Tent02.obj-6acc60b6a1100e2299359b3b61355b03.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tent02.obj-6acc60b6a1100e2299359b3b61355b03.mesh"]
+
+source_file="res://assets/RaceTracksKit/OBJ/Tent02.obj"
+dest_files=["res://.godot/imported/Tent02.obj-6acc60b6a1100e2299359b3b61355b03.mesh", "res://.godot/imported/Tent02.obj-6acc60b6a1100e2299359b3b61355b03.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
