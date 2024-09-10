@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bx16578vw56xp"]
+[gd_scene load_steps=20 format=3 uid="uid://bx16578vw56xp"]
 
 [ext_resource type="PackedScene" uid="uid://bo281n700jdc8" path="res://scenes/unicycle.tscn" id="1_uxhwy"]
+[ext_resource type="Texture2D" uid="uid://dkk2eg6q0y3mk" path="res://assets/grass.jpg" id="2_3hh0y"]
 [ext_resource type="Texture2D" uid="uid://bsvx77kaxwufq" path="res://assets/RaceTracksKit/Textures/StartFinishFlags.png" id="2_fgp86"]
 [ext_resource type="ArrayMesh" uid="uid://bboxsogomum8x" path="res://assets/RaceTracksKit/OBJ/BeginFlag.obj" id="2_ndicr"]
 [ext_resource type="ArrayMesh" uid="uid://ccow08shlp0ue" path="res://assets/RaceTracksKit/OBJ/BeginTrack01.obj" id="4_3t7sn"]
@@ -8,9 +9,13 @@
 [ext_resource type="ArrayMesh" uid="uid://t2b0keeboic2" path="res://assets/RaceTracksKit/OBJ/StraightTrack01.obj" id="6_ms015"]
 [ext_resource type="ArrayMesh" uid="uid://dwmxr8fboaaty" path="res://assets/RaceTracksKit/OBJ/CurvedTrack02.obj" id="7_o64x2"]
 [ext_resource type="ArrayMesh" uid="uid://kputr5q67fh1" path="res://assets/RaceTracksKit/OBJ/C_CurvedTrack01.obj" id="8_0c25m"]
+[ext_resource type="ArrayMesh" uid="uid://c30to0vsky87s" path="res://assets/RaceTracksKit/OBJ/LightPole01.obj" id="10_64g55"]
+[ext_resource type="ArrayMesh" uid="uid://bbs3kcfx7fxrk" path="res://assets/RaceTracksKit/OBJ/StadiumSits2.obj" id="11_ovabt"]
+[ext_resource type="ArrayMesh" uid="uid://d3jldfgbp8mt4" path="res://assets/RaceTracksKit/OBJ/Tent01.obj" id="12_qy7tg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gn42d"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.396885, 0.631769, 0.874946, 1)
+sky_horizon_color = Color(0.76863, 0.775811, 0.78715, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
 [sub_resource type="Sky" id="Sky_a03do"]
@@ -20,12 +25,23 @@ sky_material = SubResource("ProceduralSkyMaterial_gn42d")
 background_mode = 2
 sky = SubResource("Sky_a03do")
 tonemap_mode = 2
+sdfgi_enabled = true
+glow_enabled = true
+fog_light_color = Color(0.473594, 0.508385, 0.563063, 1)
+fog_density = 0.4521
+volumetric_fog_density = 1.354
+volumetric_fog_length = 592.16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plx77"]
+albedo_color = Color(0.370028, 0.680376, 0.469661, 1)
+albedo_texture = ExtResource("2_3hh0y")
+uv1_scale = Vector3(50, 50, 50)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o7qma"]
-size = Vector2(100, 100)
+size = Vector2(500, 500)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_18oio"]
-data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ubhq1"]
+data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvm1g"]
 albedo_texture = ExtResource("2_fgp86")
@@ -33,7 +49,7 @@ albedo_texture = ExtResource("2_fgp86")
 [node name="Node3D" type="Node3D"]
 
 [node name="Unicycle" parent="." instance=ExtResource("1_uxhwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72711, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1.72711, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_b2ks7")
@@ -43,113 +59,146 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(4.66899, 0, 0, 0, 1, 0, 0, 0, 5.94588, 0, 2.38419e-07, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, 0)
+material_override = SubResource("StandardMaterial3D_plx77")
 mesh = SubResource("PlaneMesh_o7qma")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_18oio")
+shape = SubResource("ConcavePolygonShape3D_ubhq1")
 
 [node name="Racetrack" type="Node3D" parent="."]
 
 [node name="BeginFlag" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.18021e-08, 0, 0.27, 0, 0.27, 0, -0.27, 0, -1.18021e-08, 0.686619, 2.36988, 5.73073)
+transform = Transform3D(-2.59646e-08, 0, 0.594, 0, 0.594, 0, -0.594, 0, -2.59646e-08, -15.7347, 5.17899, 18.78)
 material_override = SubResource("StandardMaterial3D_wvm1g")
 mesh = ExtResource("2_ndicr")
 skeleton = NodePath("../..")
 
 [node name="BeginTrack01" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 0.472, 0.15, -1)
+transform = Transform3D(-3.8466e-08, 0, -0.88, 0, 0.88, 0, 0.88, 0, -3.8466e-08, -16.2068, 0.295255, 3.97237)
 mesh = ExtResource("4_3t7sn")
 skeleton = NodePath("../..")
 
 [node name="BeginTrack02" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 0.472, 0.15, 9.702)
+transform = Transform3D(-3.8466e-08, 0, -0.88, 0, 0.88, 0, 0.88, 0, -3.8466e-08, -16.2068, 0.295255, 27.5168)
 mesh = ExtResource("4_3t7sn")
 skeleton = NodePath("../..")
 
 [node name="CurvedTrack01" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.73429e-08, 0, 0.39676, 0, 0.39676, 0, -0.39676, 0, -1.73429e-08, 4.483, 0.15, 26.639)
+transform = Transform3D(-3.81544e-08, 0, 0.872872, 0, 0.872872, 0, -0.872872, 0, -3.81544e-08, -7.38263, 0.295255, 64.7782)
 mesh = ExtResource("5_soh1n")
 skeleton = NodePath("../..")
 
 [node name="CurvedTrack02" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.73429e-08, 0, 0.39676, 0, 0.39676, 0, -0.39676, 0, -1.73429e-08, 4.483, 0.15, 26.639)
+transform = Transform3D(-3.81544e-08, 0, 0.872872, 0, 0.872872, 0, -0.872872, 0, -3.81544e-08, -7.38263, 0.295255, 64.7782)
 mesh = ExtResource("5_soh1n")
 skeleton = NodePath("../..")
 
 [node name="CurvedTrack04" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 13.2083, 0.15, -40.361)
+transform = Transform3D(-3.8466e-08, 0, -0.88, 0, 0.88, 0, 0.88, 0, -3.8466e-08, 11.813, 0.295255, -82.6218)
 mesh = ExtResource("5_soh1n")
 skeleton = NodePath("../..")
 
 [node name="CurvedTrack05" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, -3.58355, 0.15, -17.361)
+transform = Transform3D(-3.8466e-08, 0, -0.88, 0, 0.88, 0, 0.88, 0, -3.8466e-08, -25.129, 0.295255, -32.0218)
 mesh = ExtResource("5_soh1n")
 skeleton = NodePath("../..")
 
 [node name="CurvedTrack06" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(5.24537e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, 5.24537e-08, -27.5835, 0.15, -24.361)
+transform = Transform3D(6.64382e-08, 0, 0.88, 0, 0.88, 0, -0.88, 0, 6.64382e-08, -77.9289, 0.295255, -47.4218)
 mesh = ExtResource("5_soh1n")
 skeleton = NodePath("../..")
 
 [node name="CurvedTrack07" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(0.4, 0, -6.99382e-08, 0, 0.4, 0, 6.99382e-08, 0, 0.4, -28.2629, 0.15, -39.6015)
+transform = Transform3D(0.88, 0, -1.53864e-07, 0, 0.88, 0, 1.53864e-07, 0, 0.88, -79.4236, 0.295255, -80.9509)
 mesh = ExtResource("5_soh1n")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack01" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 21.8814, 0.15, 29.9924)
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 30.9591, 0.422626, 71.994)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack03" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 60.023, 0.15, 7.45498)
+transform = Transform3D(-3.8466e-08, 0, 0.88, 0, 0.88, 0, -0.88, 0, -3.8466e-08, 114.871, 0.422626, 22.4117)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack04" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 60.023, 0.15, -2.54502)
+transform = Transform3D(-3.8466e-08, 0, 0.88, 0, 0.88, 0, -0.88, 0, -3.8466e-08, 114.871, 0.422626, 0.411671)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack05" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 16.8763, 0.15, -13.4282)
+transform = Transform3D(-3.8466e-08, 0, 0.88, 0, 0.88, 0, -0.88, 0, -3.8466e-08, 19.9478, 0.422626, -23.5313)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack06" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 16.8763, 0.15, -23.4282)
+transform = Transform3D(-3.8466e-08, 0, 0.88, 0, 0.88, 0, -0.88, 0, -3.8466e-08, 19.9478, 0.422626, -45.5313)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack07" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.12372, 0.15, -43.7322)
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, -24.0522, 0.422626, -90.2001)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack08" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -12.1237, 0.15, -43.7322)
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, -43.8522, 0.422626, -90.2001)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack02" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 32.5728, 0.15, 29.9924)
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 54.4801, 0.422626, 71.994)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="CurvedTrack03" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74414e-08, 0, 0.399013, 0, 0.399013, 0, -0.399013, 0, -1.74414e-08, 53.1083, 0.15, 25.9431)
+transform = Transform3D(-3.83711e-08, 0, 0.877829, 0, 0.877829, 0, -0.877829, 0, -3.83711e-08, 99.593, 0.499815, 63.0211)
 mesh = ExtResource("7_o64x2")
 skeleton = NodePath("../..")
 
 [node name="CCurvedTrack01" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 49.2452, 0.15, -18)
+transform = Transform3D(-3.8466e-08, 0, -0.88, 0, 0.88, 0, 0.88, 0, -3.8466e-08, 91.0942, 0.295255, -33.4276)
 mesh = ExtResource("8_0c25m")
 skeleton = NodePath("../..")
 
 [node name="CCurvedTrack02" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 27.6867, 0.15, 2.58381)
+transform = Transform3D(-3.8466e-08, 0, 0.88, 0, 0.88, 0, -0.88, 0, -3.8466e-08, 43.6655, 0.295255, 11.8568)
 mesh = ExtResource("8_0c25m")
 skeleton = NodePath("../..")
+
+[node name="LightPole01" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, 48.9611, 17.4194, -7.03412)
+mesh = ExtResource("10_64g55")
+
+[node name="LightPole02" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.424264, 0, -0.424264, 0, 0.6, 0, 0.424264, 0, 0.424264, -26.0389, 17.4194, 78.9659)
+mesh = ExtResource("10_64g55")
+
+[node name="LightPole03" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.96046e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, 5.96046e-08, -114.039, 17.4194, -66.0341)
+mesh = ExtResource("10_64g55")
+
+[node name="StadiumSits2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.92, 0, 0, 0, 0.92, 0, 0, 0, 0.92, 53, 5, 98)
+mesh = ExtResource("11_ovabt")
+
+[node name="StadiumSits3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.02145e-08, 0, -0.92, 0, 0.92, 0, 0.92, 0, -4.02145e-08, -48, 5, 18)
+mesh = ExtResource("11_ovabt")
+
+[node name="StadiumSits4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.02145e-08, 0, -0.92, 0, 0.92, 0, 0.92, 0, -4.02145e-08, -114, 5, -64)
+mesh = ExtResource("11_ovabt")
+
+[node name="StadiumSits5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.92, 0, 2.98023e-08, 0, 0.92, 0, -2.98023e-08, 0, -0.92, 92, 5, -71)
+mesh = ExtResource("11_ovabt")
+
+[node name="Tent01" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 86, 0, 41)
+mesh = ExtResource("12_qy7tg")
