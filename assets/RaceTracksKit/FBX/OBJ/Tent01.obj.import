@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d3jldfgbp8mt4"
+path="res://.godot/imported/Tent01.obj-c25e36ccf0e8b3d292bc1a26bf446bbb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tent01.obj-c25e36ccf0e8b3d292bc1a26bf446bbb.mesh"]
+
+source_file="res://assets/RaceTracksKit/FBX/OBJ/Tent01.obj"
+dest_files=["res://.godot/imported/Tent01.obj-c25e36ccf0e8b3d292bc1a26bf446bbb.mesh", "res://.godot/imported/Tent01.obj-c25e36ccf0e8b3d292bc1a26bf446bbb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

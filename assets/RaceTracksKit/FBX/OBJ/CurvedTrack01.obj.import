@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://51a5ae1bd0yv"
+path="res://.godot/imported/CurvedTrack01.obj-e45272a7c66638690a3b5fb85387229a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CurvedTrack01.obj-e45272a7c66638690a3b5fb85387229a.mesh"]
+
+source_file="res://assets/RaceTracksKit/FBX/OBJ/CurvedTrack01.obj"
+dest_files=["res://.godot/imported/CurvedTrack01.obj-e45272a7c66638690a3b5fb85387229a.mesh", "res://.godot/imported/CurvedTrack01.obj-e45272a7c66638690a3b5fb85387229a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

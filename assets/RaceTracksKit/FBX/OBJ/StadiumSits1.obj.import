@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dxmjrnvvulw1q"
+path="res://.godot/imported/StadiumSits1.obj-a0b9388f40474810618ed323939f64a6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/StadiumSits1.obj-a0b9388f40474810618ed323939f64a6.mesh"]
+
+source_file="res://assets/RaceTracksKit/FBX/OBJ/StadiumSits1.obj"
+dest_files=["res://.godot/imported/StadiumSits1.obj-a0b9388f40474810618ed323939f64a6.mesh", "res://.godot/imported/StadiumSits1.obj-a0b9388f40474810618ed323939f64a6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

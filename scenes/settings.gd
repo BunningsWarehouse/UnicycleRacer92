@@ -2,13 +2,23 @@ extends Control
 
 
 
-func _on_volume_value_changed(value):
+func _on_master_value_changed(value):
 	AudioServer.set_bus_volume_db(0,value)
 
+func _on_music_value_changed(value):
+	AudioServer.set_bus_volume_db(1,value)
 
-func _on_mute_toggled(toggled_on):
-	AudioServer.set_bus_mute(0,toggled_on)
+func _on_sfx_value_changed(value):
+	AudioServer.set_bus_volume_db(2,value)
 
+func _on_mute_all_sound_toggled(toggled_on):
+	AudioServer.set_bus_mute(0, toggled_on)
+
+func _on_mute_music_toggled(toggled_on):
+	AudioServer.set_bus_mute(1, toggled_on)
+
+func _on_mute_sfx_toggled(toggled_on):
+	AudioServer.set_bus_mute(2, toggled_on)
 
 func _on_resolutions_item_selected(index):
 	match index:
@@ -41,3 +51,6 @@ func _on_screen_mode_item_selected(index):
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+

@@ -3,15 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://bo281n700jdc8" path="res://scenes/unicycle.tscn" id="1_uxhwy"]
 [ext_resource type="Texture2D" uid="uid://dkk2eg6q0y3mk" path="res://assets/grass.jpg" id="2_3hh0y"]
 [ext_resource type="Texture2D" uid="uid://bsvx77kaxwufq" path="res://assets/RaceTracksKit/Textures/StartFinishFlags.png" id="2_fgp86"]
-[ext_resource type="ArrayMesh" uid="uid://bboxsogomum8x" path="res://assets/RaceTracksKit/OBJ/BeginFlag.obj" id="2_ndicr"]
-[ext_resource type="ArrayMesh" uid="uid://ccow08shlp0ue" path="res://assets/RaceTracksKit/OBJ/BeginTrack01.obj" id="4_3t7sn"]
-[ext_resource type="ArrayMesh" uid="uid://51a5ae1bd0yv" path="res://assets/RaceTracksKit/OBJ/CurvedTrack01.obj" id="5_soh1n"]
-[ext_resource type="ArrayMesh" uid="uid://t2b0keeboic2" path="res://assets/RaceTracksKit/OBJ/StraightTrack01.obj" id="6_ms015"]
-[ext_resource type="ArrayMesh" uid="uid://dwmxr8fboaaty" path="res://assets/RaceTracksKit/OBJ/CurvedTrack02.obj" id="7_o64x2"]
-[ext_resource type="ArrayMesh" uid="uid://kputr5q67fh1" path="res://assets/RaceTracksKit/OBJ/C_CurvedTrack01.obj" id="8_0c25m"]
-[ext_resource type="ArrayMesh" uid="uid://c30to0vsky87s" path="res://assets/RaceTracksKit/OBJ/LightPole01.obj" id="10_64g55"]
-[ext_resource type="ArrayMesh" uid="uid://bbs3kcfx7fxrk" path="res://assets/RaceTracksKit/OBJ/StadiumSits2.obj" id="11_ovabt"]
-[ext_resource type="ArrayMesh" uid="uid://d3jldfgbp8mt4" path="res://assets/RaceTracksKit/OBJ/Tent01.obj" id="12_qy7tg"]
+[ext_resource type="ArrayMesh" uid="uid://bboxsogomum8x" path="res://assets/RaceTracksKit/FBX/OBJ/BeginFlag.obj" id="2_ndicr"]
+[ext_resource type="ArrayMesh" uid="uid://ccow08shlp0ue" path="res://assets/RaceTracksKit/FBX/OBJ/BeginTrack01.obj" id="4_3t7sn"]
+[ext_resource type="ArrayMesh" uid="uid://51a5ae1bd0yv" path="res://assets/RaceTracksKit/FBX/OBJ/CurvedTrack01.obj" id="5_soh1n"]
+[ext_resource type="ArrayMesh" uid="uid://t2b0keeboic2" path="res://assets/RaceTracksKit/FBX/OBJ/StraightTrack01.obj" id="6_ms015"]
+[ext_resource type="ArrayMesh" uid="uid://dwmxr8fboaaty" path="res://assets/RaceTracksKit/FBX/OBJ/CurvedTrack02.obj" id="7_o64x2"]
+[ext_resource type="ArrayMesh" uid="uid://kputr5q67fh1" path="res://assets/RaceTracksKit/FBX/OBJ/C_CurvedTrack01.obj" id="8_0c25m"]
+[ext_resource type="ArrayMesh" uid="uid://c30to0vsky87s" path="res://assets/RaceTracksKit/FBX/OBJ/LightPole01.obj" id="10_64g55"]
+[ext_resource type="ArrayMesh" uid="uid://bbs3kcfx7fxrk" path="res://assets/RaceTracksKit/FBX/OBJ/StadiumSits2.obj" id="11_ovabt"]
+[ext_resource type="ArrayMesh" uid="uid://d3jldfgbp8mt4" path="res://assets/RaceTracksKit/FBX/OBJ/Tent01.obj" id="12_qy7tg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gn42d"]
 sky_top_color = Color(0.396885, 0.631769, 0.874946, 1)
@@ -50,6 +50,7 @@ albedo_texture = ExtResource("2_fgp86")
 
 [node name="Unicycle" parent="." instance=ExtResource("1_uxhwy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1.72711, 0)
+sens = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_b2ks7")
@@ -97,7 +98,7 @@ mesh = ExtResource("5_soh1n")
 skeleton = NodePath("../..")
 
 [node name="CurvedTrack04" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-3.8466e-08, 0, -0.88, 0, 0.88, 0, 0.88, 0, -3.8466e-08, 11.813, 0.295255, -82.6218)
+transform = Transform3D(-3.8466e-08, 0, -0.88, 0, 0.88, 0, 0.88, 0, -3.8466e-08, 11.0874, 0.362227, -82.6218)
 mesh = ExtResource("5_soh1n")
 skeleton = NodePath("../..")
 
@@ -117,12 +118,12 @@ mesh = ExtResource("5_soh1n")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack01" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 30.9591, 0.422626, 71.994)
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.871587, 30.9591, 0.37562, 72.1519)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack03" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-3.8466e-08, 0, 0.88, 0, 0.88, 0, -0.88, 0, -3.8466e-08, 114.871, 0.422626, 22.4117)
+transform = Transform3D(-3.96713e-08, 0, 0.88, 0, 0.88, 0, -0.907574, 0, -3.8466e-08, 114.871, 0.378295, 22.5403)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
@@ -132,7 +133,7 @@ mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack05" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-3.8466e-08, 0, 0.88, 0, 0.88, 0, -0.88, 0, -3.8466e-08, 19.9478, 0.422626, -23.5313)
+transform = Transform3D(-3.8466e-08, 0, 0.870177, 0, 0.88, 0, -0.88, 0, -3.80366e-08, 19.8665, 0.422626, -23.5313)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
@@ -152,22 +153,22 @@ mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="StraightTrack02" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.88, 54.4801, 0.422626, 71.994)
+transform = Transform3D(0.88, 0, 0, 0, 0.88, 0, 0, 0, 0.872059, 54.4801, 0.422626, 72.1675)
 mesh = ExtResource("6_ms015")
 skeleton = NodePath("../..")
 
 [node name="CurvedTrack03" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-3.83711e-08, 0, 0.877829, 0, 0.877829, 0, -0.877829, 0, -3.83711e-08, 99.593, 0.499815, 63.0211)
+transform = Transform3D(-3.80429e-08, 0, 0.877829, 0, 0.877829, 0, -0.870321, 0, -3.83711e-08, 99.593, 0.398149, 63.3103)
 mesh = ExtResource("7_o64x2")
 skeleton = NodePath("../..")
 
 [node name="CCurvedTrack01" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-3.8466e-08, 0, -0.88, 0, 0.88, 0, 0.88, 0, -3.8466e-08, 91.0942, 0.295255, -33.4276)
+transform = Transform3D(-3.8466e-08, 0, -0.879487, 0, 0.880255, 0, 0.88, 0, -3.84436e-08, 91.1505, 0.374559, -33.4276)
 mesh = ExtResource("8_0c25m")
 skeleton = NodePath("../..")
 
 [node name="CCurvedTrack02" type="MeshInstance3D" parent="Racetrack"]
-transform = Transform3D(-3.8466e-08, 0, 0.88, 0, 0.88, 0, -0.88, 0, -3.8466e-08, 43.6655, 0.295255, 11.8568)
+transform = Transform3D(-3.8466e-08, 0, 0.877615, 0, 0.88, 0, -0.88, 0, -3.83617e-08, 43.647, 0.295255, 11.3704)
 mesh = ExtResource("8_0c25m")
 skeleton = NodePath("../..")
 

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://5t8t2okbydoe"
+path="res://.godot/imported/Ramp2.obj-19c26e0d56b49504e0560ad13de52433.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Ramp2.obj-19c26e0d56b49504e0560ad13de52433.mesh"]
+
+source_file="res://assets/RaceTracksKit/FBX/OBJ/Ramp2.obj"
+dest_files=["res://.godot/imported/Ramp2.obj-19c26e0d56b49504e0560ad13de52433.mesh", "res://.godot/imported/Ramp2.obj-19c26e0d56b49504e0560ad13de52433.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

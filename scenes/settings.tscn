@@ -24,15 +24,38 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Volume"
+text = "Master"
 
-[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="Master" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Mute" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Mute
+text = "Music"
+
+[node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFX" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Mute All Sound" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute All Sound
 "
+
+[node name="Mute Music" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute Music
+"
+
+[node name="Mute SFX" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute SFX"
 
 [node name="Resolutions" type="OptionButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -62,8 +85,14 @@ popup/item_3/id = 3
 layout_mode = 2
 text = "Back"
 
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
-[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute All Sound" to="." method="_on_mute_all_sound_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute Music" to="." method="_on_mute_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute Music" to="." method="_on_mute_music_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute SFX" to="." method="_on_mute_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute SFX" to="." method="_on_mute_sfx_toggled"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/Screen Mode" to="." method="_on_screen_mode_item_selected"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

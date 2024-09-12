@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cy2k5s4ahp2gf"
+path="res://.godot/imported/TwoSidesTrack01.obj-20e9f081fb164e3f15d8f30e98d94284.mesh"
+
+[deps]
+
+files=["res://.godot/imported/TwoSidesTrack01.obj-20e9f081fb164e3f15d8f30e98d94284.mesh"]
+
+source_file="res://assets/RaceTracksKit/FBX/OBJ/TwoSidesTrack01.obj"
+dest_files=["res://.godot/imported/TwoSidesTrack01.obj-20e9f081fb164e3f15d8f30e98d94284.mesh", "res://.godot/imported/TwoSidesTrack01.obj-20e9f081fb164e3f15d8f30e98d94284.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
