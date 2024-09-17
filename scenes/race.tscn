@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bx16578vw56xp"]
+[gd_scene load_steps=43 format=3 uid="uid://bx16578vw56xp"]
 
 [ext_resource type="PackedScene" uid="uid://bo281n700jdc8" path="res://scenes/unicycle.tscn" id="1_uxhwy"]
 [ext_resource type="Texture2D" uid="uid://dkk2eg6q0y3mk" path="res://assets/grass.jpg" id="2_3hh0y"]
@@ -111,6 +111,8 @@ data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hbo36"]
 data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6vrox"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -413,3 +415,11 @@ transform = Transform3D(3.30549e-05, 0, 167.453, 0, 36.4954, 0, -68.7461, 0, 8.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boundaries/StaticBody3D22"]
 shape = SubResource("ConcavePolygonShape3D_hbo36")
+
+[node name="Waypoints" type="Node3D" parent="."]
+
+[node name="Waypoint1" type="Area3D" parent="Waypoints"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -16, 0, 36)
+
+[node name="Waypoint1" type="CollisionShape3D" parent="Waypoints/Waypoint1"]
+shape = SubResource("BoxShape3D_6vrox")
