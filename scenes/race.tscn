@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bx16578vw56xp"]
+[gd_scene load_steps=44 format=3 uid="uid://bx16578vw56xp"]
 
 [ext_resource type="PackedScene" uid="uid://bo281n700jdc8" path="res://scenes/unicycle.tscn" id="1_uxhwy"]
 [ext_resource type="Texture2D" uid="uid://dkk2eg6q0y3mk" path="res://assets/grass.jpg" id="2_3hh0y"]
@@ -12,6 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c30to0vsky87s" path="res://assets/RaceTracksKit/FBX/OBJ/LightPole01.obj" id="10_64g55"]
 [ext_resource type="ArrayMesh" uid="uid://bbs3kcfx7fxrk" path="res://assets/RaceTracksKit/FBX/OBJ/StadiumSits2.obj" id="11_ovabt"]
 [ext_resource type="ArrayMesh" uid="uid://d3jldfgbp8mt4" path="res://assets/RaceTracksKit/FBX/OBJ/Tent01.obj" id="12_qy7tg"]
+[ext_resource type="Script" path="res://scripts/Waypoints.gd" id="13_1gb4t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gn42d"]
 sky_top_color = Color(0.396885, 0.631769, 0.874946, 1)
@@ -116,8 +117,10 @@ data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Unicycle" parent="." instance=ExtResource("1_uxhwy")]
+[node name="Unicycle" parent="." groups=["player"] instance=ExtResource("1_uxhwy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1.72711, 0)
+collision_layer = 3
+collision_mask = 3
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_b2ks7")
@@ -417,9 +420,33 @@ transform = Transform3D(3.30549e-05, 0, 167.453, 0, 36.4954, 0, -68.7461, 0, 8.0
 shape = SubResource("ConcavePolygonShape3D_hbo36")
 
 [node name="Waypoints" type="Node3D" parent="."]
+script = ExtResource("13_1gb4t")
 
 [node name="Waypoint1" type="Area3D" parent="Waypoints"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -16, 0, 36)
+collision_layer = 2
+collision_mask = 2
 
 [node name="Waypoint1" type="CollisionShape3D" parent="Waypoints/Waypoint1"]
+shape = SubResource("BoxShape3D_6vrox")
+
+[node name="Waypoint2" type="Area3D" parent="Waypoints"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 114, 0, 24)
+collision_mask = 2
+
+[node name="Waypoint2" type="CollisionShape3D" parent="Waypoints/Waypoint2"]
+shape = SubResource("BoxShape3D_6vrox")
+
+[node name="Waypoint3" type="Area3D" parent="Waypoints"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 19, 0, -40)
+collision_mask = 2
+
+[node name="Waypoint3" type="CollisionShape3D" parent="Waypoints/Waypoint3"]
+shape = SubResource("BoxShape3D_6vrox")
+
+[node name="Waypoint4" type="Area3D" parent="Waypoints"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -17, 0, 9)
+collision_mask = 2
+
+[node name="Waypoint4" type="CollisionShape3D" parent="Waypoints/Waypoint4"]
 shape = SubResource("BoxShape3D_6vrox")
