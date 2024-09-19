@@ -423,7 +423,7 @@ shape = SubResource("ConcavePolygonShape3D_hbo36")
 script = ExtResource("13_1gb4t")
 
 [node name="Waypoint1" type="Area3D" parent="Waypoints"]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -16, 0, 36)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -16, 0, 52)
 collision_layer = 2
 collision_mask = 2
 
@@ -445,7 +445,7 @@ collision_mask = 2
 shape = SubResource("BoxShape3D_6vrox")
 
 [node name="Waypoint4" type="Area3D" parent="Waypoints"]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -17, 0, 9)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, -17, 0, 29)
 collision_mask = 2
 
 [node name="Waypoint4" type="CollisionShape3D" parent="Waypoints/Waypoint4"]
