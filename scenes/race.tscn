@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bx16578vw56xp"]
+[gd_scene load_steps=46 format=3 uid="uid://bx16578vw56xp"]
 
 [ext_resource type="PackedScene" uid="uid://bo281n700jdc8" path="res://scenes/unicycle.tscn" id="1_uxhwy"]
 [ext_resource type="Texture2D" uid="uid://dkk2eg6q0y3mk" path="res://assets/grass.jpg" id="2_3hh0y"]
@@ -13,6 +13,8 @@
 [ext_resource type="ArrayMesh" uid="uid://bbs3kcfx7fxrk" path="res://assets/RaceTracksKit/FBX/OBJ/StadiumSits2.obj" id="11_ovabt"]
 [ext_resource type="ArrayMesh" uid="uid://d3jldfgbp8mt4" path="res://assets/RaceTracksKit/FBX/OBJ/Tent01.obj" id="12_qy7tg"]
 [ext_resource type="Script" path="res://scripts/Waypoints.gd" id="13_1gb4t"]
+[ext_resource type="PackedScene" uid="uid://docawxg05nm77" path="res://scenes/pause.tscn" id="14_u32ci"]
+[ext_resource type="PackedScene" uid="uid://dk7j7kmxhphxa" path="res://scenes/win.tscn" id="15_h71k0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gn42d"]
 sky_top_color = Color(0.396885, 0.631769, 0.874946, 1)
@@ -450,3 +452,11 @@ collision_mask = 2
 
 [node name="Waypoint4" type="CollisionShape3D" parent="Waypoints/Waypoint4"]
 shape = SubResource("BoxShape3D_6vrox")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("14_u32ci")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Win" parent="." instance=ExtResource("15_h71k0")]
